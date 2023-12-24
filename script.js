@@ -10,8 +10,8 @@ const wrongAnswers = document.querySelectorAll(".wrong-answer");
 const congratsAudio = document.querySelector(".congrats-audio");
 const wrongAudio = document.querySelector(".wrong-audio");
 const thanks = document.querySelector(".thanks");
-const nextBtn = document.querySelector(".next-btn");
-const prevBtn = document.querySelector(".prev-btn");
+// const nextBtn = document.querySelector(".next-btn");
+// const prevBtn = document.querySelector(".prev-btn");
 
 const step = [
   "START",
@@ -46,7 +46,7 @@ const changeStep = (step) => {
       currentStep = "START";
       displayNone(prevBtn);
       displayNone(questionWrapper);
-      displayNone(nextBtn);
+      // displayNone(nextBtn);
       break;
     case "VIDEO":
       displayNone(playButton);
@@ -55,8 +55,8 @@ const changeStep = (step) => {
       displayNone(question1);
       displayNone(question2);
       displayNone(thanks);
-      displayBlock(prevBtn);
-      displayBlock(nextBtn);
+      // displayBlock(prevBtn);
+      // displayBlock(nextBtn);
       displayNone(questionWrapper);
       currentStep = "VIDEO";
       break;
@@ -66,8 +66,8 @@ const changeStep = (step) => {
       displayFlex(question1);
       displayNone(question2);
       displayNone(thanks);
-      displayBlock(prevBtn);
-      displayBlock(nextBtn);
+      // displayBlock(prevBtn);
+      // displayBlock(nextBtn);
       displayBlock(questionWrapper);
       currentStep = "QUESTION1";
       break;
@@ -77,9 +77,9 @@ const changeStep = (step) => {
       displayNone(question1);
       displayFlex(question2);
       displayNone(thanks);
-      displayBlock(prevBtn);
+      // displayBlock(prevBtn);
       displayBlock(questionWrapper);
-      displayBlock(nextBtn);
+      // displayBlock(nextBtn);
       currentStep = "QUESTION2";
       break;
     case "END":
@@ -87,9 +87,9 @@ const changeStep = (step) => {
       displayNone(video);
       displayNone(question1);
       displayNone(question2);
-      displayNone(nextBtn);
+      // displayNone(nextBtn);
       displayBlock(thanks);
-      displayBlock(prevBtn);
+      // displayBlock(prevBtn);
       currentStep = "END";
       break;
   }
@@ -103,13 +103,13 @@ const handlePrev = () => {
   changeStep(step[step.indexOf(currentStep) - 1]);
 }
 
-nextBtn.addEventListener('click', () => {
-  handleNext();
-})
+// nextBtn.addEventListener('click', () => {
+//   handleNext();
+// })
 
-prevBtn.addEventListener('click', () => {
-  handlePrev();
-})
+// prevBtn.addEventListener('click', () => {
+//   handlePrev();
+// })
 
 let isCompletedVideo = false;
 
@@ -149,11 +149,11 @@ wrongAnswers.forEach(item => {
       setTimeout(() => {
         wrongGif.style.display= "none";
         wrongGif.style.animation = "slide-top-in 1s ease-in";
-        if (question1.style.display === 'flex') {
-          changeStep(step[3]);
-        } else if (question2.style.display === 'flex') {
-          changeStep(step[4]);
-        }
+        // if (question1.style.display === 'flex') {
+        //   changeStep(step[3]);
+        // } else if (question2.style.display === 'flex') {
+        //   changeStep(step[4]);
+        // }
       }, 1000)
     }, 3000)
   })
